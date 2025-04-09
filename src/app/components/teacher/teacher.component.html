@@ -1,0 +1,191 @@
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+  
+    main {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+  
+    .list li {
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  
+    .list li:hover {
+      text-decoration: underline;
+    }
+  
+    .form {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+  
+    .form h2 {
+      color: #333;
+    }
+  
+    .inputbox {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    .inputbox label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    .inputbox input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+  
+    .inputbox input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+  
+    /* Button Styling */
+    .buttonbox {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+  
+    .button:hover {
+      background-color: #45a049;
+    }
+  
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+  
+    th {
+      background: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+  
+  <main>
+    
+  
+  
+     <form class="form" #teacherForm="ngForm" (ngSubmit)="addTeacher()">
+        <h2>Add Teacher</h2>
+      
+        <div class="inputbox">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required [(ngModel)]="teacher.name">
+        </div>
+      
+        <div class="inputbox">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required [(ngModel)]="teacher.email">
+        </div>
+      
+        <div class="inputbox">
+          <label for="department">Department:</label>
+          <input type="text" id="department" name="department" required [(ngModel)]="teacher.department">
+        </div>
+      
+        <div class="inputbox">
+          <label for="subjectsTaught">Subjects Taught:</label>
+          <input type="text" id="subjectsTaught" name="subjectsTaught" required [(ngModel)]="teacher.subjectsTaught">
+        </div>
+      
+        <div class="buttonbox">
+          <button class="button" type="submit">Submit</button>
+        </div>
+      </form>
+      
+      <h1>List of Teachers</h1>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Subjects Taught</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let teacher of teachers">
+              <td>{{ teacher.name }}</td>
+              <td>{{ teacher.email }}</td>
+              <td>{{ teacher.department }}</td>
+              <td>{{ teacher.subjectsTaught }}</td>
+              <td>
+                <button (click)="deleteTeacher(teacher.teacherID)" class="delete-button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+  
+  </main> 
+  
