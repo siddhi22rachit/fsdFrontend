@@ -92,51 +92,56 @@
   
 
 
-  <form class="form" #enrollmentForm="ngForm" (ngSubmit)="addEnrollment()">
-    <h2>Add Enrollment</h2>
-  
-    <div class="inputbox">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required [(ngModel)]="newEnrollment.name">
-    </div>
-  
-    <div class="inputbox">
-      <label for="department">Department:</label>
-      <input type="text" id="department" name="department" required [(ngModel)]="newEnrollment.department">
-    </div>
-  
-    <div class="inputbox">
-      <label for="year">Year: </label>
-      <input type="text" id="year" name="year" required [(ngModel)]="newEnrollment.year">
-    </div>
-  
-    <div class="buttonbox">
-      <button class="button" type="submit">Submit</button>
-    </div>
-  </form>
-  
+   <form class="form" #hallticketForm="ngForm" (ngSubmit)="addHallticket()">
+      <h2>Add Hallticket</h2>
     
-    <h1>List of Enrollment</h1>
+      <div class="inputbox">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required [(ngModel)]="hallticket.name">
+      </div>
+    
+      <div class="inputbox">
+        <label for="examName">ExamName:</label>
+        <input type="examName" id="examName" name="examName" required [(ngModel)]="hallticket.examName">
+      </div>
+    
+      <div class="inputbox">
+        <label for="examDate">ExamDate:</label>
+        <input type="text" id="examDate" name="examDate" required [(ngModel)]="hallticket.examDate">
+      </div>
+    
+      <div class="inputbox">
+        <label for="academicYear">Academic Year:</label>
+        <input type="text" id="academicYear" name="academicYear" required [(ngModel)]="hallticket.academicYear">
+      </div>
+    
+      <div class="buttonbox">
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </form>
+    
+    <h1>List of Halltickets</h1>
     <div class="table-container">
       <table>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Department</th>
-            <th>Year</th>
+            <th>ExamName</th>
+            <th>ExamDate</th>
+            <th>Academic Year</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let s of enrollment">
-            <td>{{ s.name }}</td>
-            <td>{{ s.department }}</td>
-            <td>{{ s.year }}</td>
+          <tr *ngFor="let hallticket of halltickets">
+            <td>{{ hallticket.name }}</td>
+            <td>{{ hallticket.examName }}</td>
+            <td>{{ hallticket.examDate }}</td>
+            <td>{{ hallticket.academicYear }}</td>
             <td>
-              <button (click)="deleteEnrollment(s.enrollmentID)" class="delete-button">Delete</button>
+              <button (click)="deleteHallticket(hallticket.hallticketID)" class="delete-button">Delete</button>
             </td>
           </tr>
-          
         </tbody>
       </table>
     </div>

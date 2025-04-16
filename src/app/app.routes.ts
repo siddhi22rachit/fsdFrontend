@@ -11,11 +11,13 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import { HomeComponent } from './components/home/home.component'; // Import the new component
 import { SupervisorComponent } from './components/supervisor/supervisor.component';
 import { EnrollmentComponent } from './components/enrollment/enrollment.component';
+import { HallticketComponent } from './components/hallticket/hallticket.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },      // Home route
   { path: 'teacher', component: TeacherComponent },  // Teacher route
   { path: 'supervisor', component: SupervisorComponent } , // Teacher route
-  { path: 'enrollment', component: EnrollmentComponent }  // Teacher route
+  { path: 'enrollment', component: EnrollmentComponent },  // Teacher route
+  { path: 'hallticket', component: HallticketComponent }
 
 ];

@@ -1,1 +1,109 @@
-<h1>This is the main page</h1>
+<!-- home.component.html -->
+<div class="home-container">
+  <div class="content-section">
+    <h1 class="title">School Management System</h1>
+    <p class="subtitle">Streamlining education administration</p>
+    <p class="description">
+      Welcome to our comprehensive school management platform. Efficiently manage students, 
+      teachers, classes, and administrative tasks all in one place.
+    </p>
+    <button class="cta-button">Get Started</button>
+  </div>
+  <div class="image-section">
+    <img src="https://smartstudent.app/media/2022/09/managment-software.png" alt="School Management" class="hero-image">
+  </div>
+</div>
+
+<style>
+  /* Basic Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Main Container */
+  .home-container {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Left Content Section */
+  .content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .description {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
+  }
+  
+  .cta-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+  }
+  
+  .cta-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Right Image Section */
+  .image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .content-section {
+      padding: 40px 20px;
+    }
+    
+    .image-section {
+      padding: 20px;
+    }
+  }
+</style>
